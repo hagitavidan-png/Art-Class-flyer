@@ -167,4 +167,220 @@
   .groups{display:flex; gap:22px; margin-bottom:14px; padding-top:10px;}
   .note{
     flex:1;
-    background:var(--paper)
+    background:var(--paper);
+    border-radius:4px;
+    padding:22px 14px 18px;
+    text-align:center;
+    box-shadow:0 10px 22px rgba(0,0,0,0.22);
+    position:relative;
+  }
+  .note1{transform:rotate(-3deg);}
+  .note2{transform:rotate(2deg); margin-top:10px;}
+  .note3{transform:rotate(-1.5deg);}
+  .note .pin{background:radial-gradient(circle at 35% 30%, #fff, var(--tape-color, var(--turquoise)) 55%, var(--turquoise-d) 100%);}
+  .note1 .pin{--tape-color:var(--turquoise);}
+  .note2 .pin{--tape-color:var(--sun);}
+  .note3 .pin{--tape-color:var(--violet);}
+  .note-age{font-family:'Rubik', sans-serif; font-weight:800; font-size:26px; color:var(--ink);}
+  .note-name{font-weight:700; font-size:14px; color:var(--violet-d); margin:2px 0 10px;}
+  .note-desc{font-size:11.5px; line-height:1.6; color:#5C5468; margin-bottom:14px; min-height:70px;}
+  .note-time{
+    display:inline-flex;
+    align-items:center;
+    gap:5px;
+    font-size:12px; font-weight:700; color:#fff;
+    padding:7px 13px;
+    border-radius:14px;
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 3px 0 rgba(0,0,0,0.2), 0 5px 10px rgba(0,0,0,0.18);
+    border:1.5px solid rgba(255,255,255,0.5);
+    transition:transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .note-time:hover{
+    transform:translateY(-1px) scale(1.05);
+    box-shadow:0 4px 0 rgba(0,0,0,0.2), 0 7px 14px rgba(0,0,0,0.22);
+  }
+  .note-time:active{
+    transform:translateY(2px) scale(0.98);
+    box-shadow:0 1px 0 rgba(0,0,0,0.2), 0 2px 5px rgba(0,0,0,0.18);
+  }
+  .note-time svg{width:12px; height:12px; flex-shrink:0;}
+  .note1 .note-time{background:var(--turquoise);}
+  .note2 .note-time{background:var(--sun);}
+  .note3 .note-time{background:var(--violet);}
+  .perks-card{
+    background:var(--paper);
+    max-width:520px;
+    margin:20px auto 0;
+    padding:26px 30px;
+    border-radius:4px;
+    box-shadow:0 10px 22px rgba(0,0,0,0.2);
+    transform:rotate(0.6deg);
+    position:relative;
+  }
+  .perk-row{
+    display:flex; align-items:center; gap:12px;
+    font-size:14px; font-weight:600; color:var(--ink);
+    padding:9px 0;
+    border-bottom:1px dashed #E2D3B8;
+  }
+  .perk-row:last-child{border-bottom:none;}
+  .check{
+    width:22px; height:22px; min-width:22px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; color:#fff; font-weight:800;
+  }
+  .perk-row:nth-child(1) .check{background:var(--coral);}
+  .perk-row:nth-child(2) .check{background:var(--turquoise);}
+  .perk-row:nth-child(3) .check{background:var(--sun);}
+  .perk-row:nth-child(4) .check{background:var(--violet);}
+  .footer{
+    margin-top:54px;
+    text-align:center;
+    position:relative;
+  }
+  .footer-card{
+    display:inline-block;
+    background:linear-gradient(135deg, var(--violet-d), var(--coral-d));
+    color:#fff;
+    padding:26px 40px;
+    border-radius:6px;
+    transform:rotate(-1deg);
+    box-shadow:0 14px 26px rgba(0,0,0,0.35);
+  }
+  .footer-name{font-family:'Rubik', sans-serif; font-weight:800; font-size:20px;}
+  .footer-sub{font-size:11px; letter-spacing:2.5px; color:#D9D3EA; margin:4px 0 16px;}
+  .footer-cta-wrap{
+    position:relative;
+    display:inline-block;
+    margin-bottom:16px;
+  }
+  .footer-cta-wrap::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:30px;
+    background:#fff;
+    transform:rotate(1deg);
+    animation:cta-ring 1.4s ease-out infinite;
+  }
+  @keyframes cta-ring{
+    0%{opacity:0.6; transform:rotate(1deg) scale(1);}
+    100%{opacity:0; transform:rotate(1deg) scale(1.35);}
+  }
+  .footer-cta{
+    display:inline-block;
+    font-family:'Rubik', sans-serif; font-weight:800; font-size:16px;
+    background:#fff; color:var(--violet-d);
+    padding:12px 28px; border-radius:30px;
+    transform:rotate(1deg);
+    text-decoration:none;
+    cursor:pointer;
+    box-shadow:0 6px 0 rgba(0,0,0,0.18), 0 10px 22px rgba(0,0,0,0.28);
+    border:2px solid rgba(255,255,255,0.9);
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    animation:cta-pulse 1.4s ease-in-out infinite;
+    position:relative;
+    z-index:1;
+  }
+  .footer-cta:hover{
+    transform:rotate(1deg) translateY(-2px) scale(1.04);
+    box-shadow:0 8px 0 rgba(0,0,0,0.18), 0 14px 26px rgba(0,0,0,0.32);
+  }
+  .footer-cta:active{
+    transform:rotate(1deg) translateY(2px) scale(0.98);
+    box-shadow:0 2px 0 rgba(0,0,0,0.18), 0 4px 10px rgba(0,0,0,0.25);
+  }
+  @keyframes cta-pulse{
+    0%, 100%{transform:rotate(1deg) scale(1);}
+    50%{transform:rotate(1deg) scale(1.06);}
+  }
+  .footer-contacts{display:flex; justify-content:center; gap:22px; flex-wrap:wrap; font-size:13px; color:#fff; font-weight:500;}
+  .doodle{position:absolute; opacity:0.5; z-index:1;}
+  @media (max-width:640px){
+    .board{padding:40px 24px 36px;}
+    .hero-title{font-size:48px;}
+    .groups{flex-direction:column;}
+    .note{margin-top:0 !important;}
+    .note-desc{min-height:auto;}
+  }
+  @media print{
+    body{background:#fff; padding:0;}
+    .board{box-shadow:none; width:100%;}
+  }
+</style>
+</head>
+<body>
+  <div class="board">
+    <svg class="doodle" style="top:90px; left:36px; width:46px;" viewBox="0 0 40 40"><path d="M4 34 Q10 10 30 6" stroke="var(--turquoise-d)" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="30" cy="6" r="4" fill="#FF7A63"/></svg>
+    <svg class="doodle" style="top:640px; right:40px; width:50px;" viewBox="0 0 40 40"><path d="M6 6 L34 34 M6 34 L34 6" stroke="var(--violet)" stroke-width="2.4" stroke-linecap="round"/></svg>
+    <svg class="doodle" style="top:420px; right:30px; width:38px;" viewBox="0 0 40 40"><path d="M20 4 L24 16 L36 16 L26 24 L30 36 L20 28 L10 36 L14 24 L4 16 L16 16 Z" fill="var(--sun)"/></svg>
+    <div class="layer">
+      <div class="brand">
+        <div class="brand-name">חגית אבידן</div>
+        <div class="brand-sub">אמנות &nbsp;·&nbsp; חיבור &nbsp;·&nbsp; השראה</div>
+      </div>
+      <div class="hero-card">
+        <div class="pin"></div>
+        <div class="hero-title">חוג ציור</div>
+        <div class="hero-tag">
+          לכל ילד יש דרך ייחודית לצייר את עולמו
+          <svg viewBox="0 0 300 14" preserveAspectRatio="none"><path d="M2 8 Q40 2 80 8 T160 8 T240 8 T298 8" stroke="var(--sun)" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+        </div>
+        <div class="about">
+          במהלך השנה הילדים מתנסים ב<b>ציור ורישום</b>, עובדים עם צבע וחומרים מגוונים,
+          תוך שילוב של <b>למידה מקצועית</b> מותאמת גיל, <b>סקרנות</b> ו<b>ביטוי אישי</b>.
+        </div>
+      </div>
+      <a class="trial-banner" href="https://wa.me/972528600750?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%A0%D7%AA%2F%D7%9F%20%D7%91%D7%A9%D7%99%D7%A2%D7%95%D7%A8%20%D7%94%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%20%D7%94%D7%97%D7%99%D7%A0%D7%9D" target="_blank" rel="noopener">
+        <div class="pin"></div>
+        🎉 <b>שיעור ניסיון ראשון ללא תשלום</b> — לכל קבוצות הגיל, לאחר חופשת סוכות! · להרשמה בוואטסאפ
+      </a>
+      <div class="section-wrap"><div class="section-label">קבוצות לפי גיל</div></div>
+      <div class="groups">
+        <div class="note note1">
+          <div class="pin"></div>
+          <div class="note-age">א׳–ב׳</div>
+          <div class="note-name">חוויה וביטוי</div>
+          <div class="note-desc">הדגש הוא על חוויה, משחק, חופש יצירתי והיכרות עם צבעים וחומרים.</div>
+          <a class="note-time" href="https://wa.me/972528600750" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.03.8.81-2.95-.2-.31A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg> יום ג׳ | 16:20–17:20</a>
+        </div>
+        <div class="note note2">
+          <div class="pin"></div>
+          <div class="note-age">ג׳–ה׳</div>
+          <div class="note-name">למידה והתפתחות</div>
+          <div class="note-desc">פיתוח מיומנויות רישום והבנה, טכניקות ציור מגוונות, חיזוק השפה היצירתית וביטוי אישי.</div>
+          <a class="note-time" href="https://wa.me/972528600750" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.03.8.81-2.95-.2-.31A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg> יום ב׳ | 16:20–17:20</a>
+        </div>
+        <div class="note note3">
+          <div class="pin"></div>
+          <div class="note-age">ו׳–ט׳</div>
+          <div class="note-name">העמקה ויצירה</div>
+          <div class="note-desc">למידה מעמיקה של טכניקות מתקדמות, קומפוזיציה ופרספקטיבה, ותהליכי יצירה עצמאיים.</div>
+          <a class="note-time" href="https://wa.me/972528600750" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.03.8.81-2.95-.2-.31A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg> יום א׳ | 16:00–17:30</a>
+        </div>
+      </div>
+      <div class="section-wrap" style="margin-top:44px;"><div class="section-label">החוג שם דגש על</div></div>
+      <div class="perks-card">
+        <div class="perk-row"><span class="check">✓</span> ביטחון וביטוי יצירתי</div>
+        <div class="perk-row"><span class="check">✓</span> פיתוח דמיון וסקרנות</div>
+        <div class="perk-row"><span class="check">✓</span> למידה מקצועית באווירה נעימה ומאפשרת</div>
+        <div class="perk-row"><span class="check">✓</span> תהליך אישי בקבוצות קטנות</div>
+      </div>
+      <div class="footer">
+        <div class="footer-card">
+          <div class="footer-name">חגית אבידן</div>
+          <div class="footer-sub">אמנות · חיבור · השראה</div>
+          <div class="footer-cta-wrap"><a class="footer-cta" href="https://wa.me/972528600750" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" style="vertical-align:-2px; margin-left:4px;"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.11-1.34A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.6 0-3.1-.44-4.38-1.2l-.31-.19-3.03.8.81-2.95-.2-.31A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.4-5.9c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.4-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg> לפרטים והרשמה בוואטסאפ ←</a></div>
+          <div class="footer-contacts">
+            <div>📞 052-8600750</div>
+            <div>📍 הירקון 248, תל אביב</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
